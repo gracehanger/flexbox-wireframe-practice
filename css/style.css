@@ -9,7 +9,7 @@
     min-width: 0px;
 }
 
-p.flex-header {
+.flex-header {
     display: flex;
     flex-direction: column;
     background-color: purple;
@@ -23,13 +23,14 @@ p.flex-header {
 .article-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
+   /* justify-content: center; */
+   /* align-items: stretch; */
     background-color: rgb(80, 232, 123);
-    margin: 10px;
+    margin: 10px; 
     border-radius: 10px;
-    max-width: 1000px;
 }
+
+
 
 p.flex-article {
     display: flex;
@@ -42,7 +43,7 @@ p.flex-article {
     border-radius: 10px;
 }
 
-p.flex-aside {
+.flex-aside {
     display: flex;
     flex-direction: column;
     background-color: navy;
@@ -50,18 +51,11 @@ p.flex-aside {
     margin: 10px;
     min-height: 50px;
     border-radius: 10px;
-    justify-content: center;
+    justify-content: center; 
 }
 
-/* trying to figure out how to make the aside/article wrap when the screen 
-shrinks, can't figure it out 
-/* .article-aside {
-    display: flex;
-    flex-direction: row-reverse;
-   
-} */ 
 
-p.flex-footer {
+.flex-footer {
     display: flex;
     flex-direction: column;
     background-color: rgb(255, 134, 13);
@@ -70,4 +64,21 @@ p.flex-footer {
     min-height: 50px;
     border-radius: 10px;
     justify-content: center;
+}
+
+@media screen and (min-width: 750px) {
+    .article-aside {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        min-width: 100dvw;
+    }
+
+    .flex-aside {
+        flex-grow: 1;
+    }
+
+    .article-container {
+        flex-grow: 2;
+    }
 }
